@@ -1,11 +1,10 @@
 ﻿using LandisGyrProj.Interfaces;
-using System.Security.Cryptography.X509Certificates;
 
 namespace LandisGyrProj.Classes
 {
     public class LogsSystem : ILogSystem
     {
-        public List<string> logsSaved { get; set; }
+        private List<string> logsSaved { get; set; }
 
         public LogsSystem()
         {
@@ -17,7 +16,7 @@ namespace LandisGyrProj.Classes
             logsSaved.Add(string.Format("Date {0}: ", DateTime.Now) + message);
         }
 
-        public void ShowLog()
+        public void ShowLogs()
         {
             if (logsSaved.Count > 0)
             {

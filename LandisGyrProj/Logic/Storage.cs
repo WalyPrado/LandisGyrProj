@@ -1,6 +1,5 @@
 ﻿using LandisGyrProj.Classes;
 using LandisGyrProj.Enums;
-using System;
 
 namespace LandisGyrProj.Logic
 {

@@ -6,15 +6,13 @@ using System.Text;
 
 namespace LandisGyrProj.Logic
 {
-    public class EndpointManager : IEndpointManager
+    public class EndpointManager : Storage, IEndpointManager
     {
         public ILogSystem Logs { get; set; }
-        public Storage EndpointsStorage { get; set; }
 
         public EndpointManager()
         {
             Logs = new LogsSystem();
-            EndpointsStorage = new Storage();
         }
 
         public void SaveEndpoint()
@@ -40,7 +38,7 @@ namespace LandisGyrProj.Logic
                     }
                     else
                     {
-                        var result = EndpointsStorage.FindBySerial(value);
+                        var result = FindBySerial(value);
 
                         if (!string.IsNullOrEmpty(result.endpointSerialNumber))
                         {
@@ -139,7 +137,7 @@ namespace LandisGyrProj.Logic
                     return;
                 }
 
-                Console.WriteLine(EndpointsStorage.Save(endpoint));
+                Console.WriteLine(Save(endpoint));
             }
             catch (Exception exception)
             {
@@ -150,7 +148,7 @@ namespace LandisGyrProj.Logic
 
         public void EditEndpoint()
         {
-            if (!EndpointsStorage.GetAll().Any())
+            if (!GetAll().Any())
             {
                 Console.WriteLine("There is no endpoint saved!");
                 return;
@@ -178,7 +176,7 @@ namespace LandisGyrProj.Logic
                     }
                     else
                     {
-                        endpoint = EndpointsStorage.FindBySerial(value);
+                        endpoint = FindBySerial(value);
 
                         if (!string.IsNullOrEmpty(endpoint.endpointSerialNumber))
                         {
@@ -220,7 +218,7 @@ namespace LandisGyrProj.Logic
                     return;
                 }
 
-                Console.WriteLine(EndpointsStorage.Edit(endpoint, valueState));
+                Console.WriteLine(Edit(endpoint, valueState));
             }
             catch (Exception exception)
             {
@@ -231,7 +229,7 @@ namespace LandisGyrProj.Logic
 
         public void DeleteEndpoint()
         {
-            if (!EndpointsStorage.GetAll().Any())
+            if (!GetAll().Any())
             {
                 Console.WriteLine("There is no endpoint saved!");
                 return;
@@ -257,7 +255,7 @@ namespace LandisGyrProj.Logic
                     }
                     else
                     {
-                        endpoint = EndpointsStorage.FindBySerial(value);
+                        endpoint = FindBySerial(value);
 
                         if (!string.IsNullOrEmpty(endpoint.endpointSerialNumber))
                         {
@@ -266,7 +264,7 @@ namespace LandisGyrProj.Logic
 
                             if (value == "YES")
                             {
-                                EndpointsStorage.Delete(endpoint);
+                                Delete(endpoint);
                                 Console.WriteLine(string.Format("The endpoint {0} has been excluded!", endpoint.endpointSerialNumber));
 
                                 break;
@@ -295,7 +293,7 @@ namespace LandisGyrProj.Logic
 
         public void FindEndpointBySerial()
         {
-            if (!EndpointsStorage.GetAll().Any())
+            if (!GetAll().Any())
             {
                 Console.WriteLine("There is no endpoint saved!");
                 return;
@@ -322,7 +320,7 @@ namespace LandisGyrProj.Logic
                     else
                     {
 
-                        endpoint = EndpointsStorage.FindBySerial(value);
+                        endpoint = FindBySerial(value);
 
                         if (!string.IsNullOrEmpty(endpoint.endpointSerialNumber))
                         {
@@ -357,7 +355,7 @@ namespace LandisGyrProj.Logic
 
         public void ListAllEndpoints()
         {
-            List<Endpoint> result = EndpointsStorage.GetAll();
+            List<Endpoint> result = GetAll();
 
             if (result.Any())
             {

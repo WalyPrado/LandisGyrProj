@@ -11,7 +11,7 @@ namespace LandisGyrProj.Logic
             endpoints = new List<Endpoint>();
         }
 
-        public string Save(Endpoint endpoint)
+        protected string Save(Endpoint endpoint)
         {
             try
             {
@@ -25,7 +25,7 @@ namespace LandisGyrProj.Logic
             }
         }
 
-        public string Edit(Endpoint endpoint, State state)
+        protected string Edit(Endpoint endpoint, State state)
         {
             try
             {
@@ -41,7 +41,7 @@ namespace LandisGyrProj.Logic
             }
         }
 
-        public string Delete(Endpoint endpoint)
+        protected string Delete(Endpoint endpoint)
         {
             try
             {
@@ -55,12 +55,12 @@ namespace LandisGyrProj.Logic
             }
         }
 
-        public List<Endpoint> GetAll()
+        protected List<Endpoint> GetAll()
         {
             return endpoints;
         }
 
-        public Endpoint FindBySerial(string serial)
+        protected Endpoint FindBySerial(string serial)
         {
             Endpoint? endpoint = endpoints.FirstOrDefault(x => x.endpointSerialNumber == serial);
 

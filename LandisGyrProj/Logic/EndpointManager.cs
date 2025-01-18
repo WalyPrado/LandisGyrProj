@@ -55,8 +55,8 @@ namespace LandisGyrProj.Logic
                 #region Meter Model
                 while (value.ToLower() != "cancel")
                 {
-                    Console.WriteLine("Please, enter the code of a valid State:\n"
-                                    + "Valid values: 16 - NSX1P2W, 17 - NSX1P3W, 18 - NSX2P3W, 19 - NSX3P4W");
+                    Console.WriteLine("Please, enter the code of a valid model:\n"
+                                    + "Valid values:\n16 - NSX1P2W\n17 - NSX1P3W\n18 - NSX2P3W\n19 - NSX3P4W");
 
                     value = Console.ReadLine() ?? string.Empty;
 
@@ -115,7 +115,7 @@ namespace LandisGyrProj.Logic
                 while (value.ToLower() != "cancel")
                 {
                     Console.WriteLine("Please, enter the code of a valid State:\n"
-                                       + "Valid values: 0 - Disconnected, 1 - Connected, 2 - Armed");
+                                       + "Valid values:\n0 - Disconnected\n1 - Connected\n2 - Armed");
                     value = Console.ReadLine() ?? string.Empty;
 
                     if (value.ToLower() == "cancel")

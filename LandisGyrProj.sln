@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35707.178 d17.12
+VisualStudioVersion = 17.12.35707.178
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LandisGyrProj", "LandisGyrProj\LandisGyrProj.csproj", "{091665D6-5601-402C-8DA8-73296C56E6E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EndpointTest", "..\EndpointTest\EndpointTest\EndpointTest.csproj", "{09B5B79E-9B85-479D-BD17-2FD961E7E73F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{091665D6-5601-402C-8DA8-73296C56E6E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{091665D6-5601-402C-8DA8-73296C56E6E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{091665D6-5601-402C-8DA8-73296C56E6E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09B5B79E-9B85-479D-BD17-2FD961E7E73F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09B5B79E-9B85-479D-BD17-2FD961E7E73F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09B5B79E-9B85-479D-BD17-2FD961E7E73F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09B5B79E-9B85-479D-BD17-2FD961E7E73F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -5,7 +5,7 @@ namespace LandisGyrProj.Logic
 {
     public class Storage
     {
-        List<Endpoint> endpoints { get; set; }
+        private List<Endpoint> endpoints { get; set; }
         public Storage()
         {
             endpoints = new List<Endpoint>();
